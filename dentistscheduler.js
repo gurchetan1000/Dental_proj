@@ -12,6 +12,7 @@ class DentistScheduler {
 
         this.scheduleAppointment = async (time) => {
             const response = await fetch(configuration.SchedulerEndpoint + "schedule", { method: "post", body: { time: time } })
+            
             let responseText = `An appointment is set for ${time}.`
             return responseText
         }

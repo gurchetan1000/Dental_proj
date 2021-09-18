@@ -28,7 +28,7 @@ class IntentRecognizer {
 
  
     getTimeEntity(result) {
-        const datetimeEntity = result.entities.date-time;
+        const datetimeEntity = result.entities.date_time;
         if (!datetimeEntity || !datetimeEntity[0]) return undefined;
 
         const timex = datetimeEntity[0].timex;

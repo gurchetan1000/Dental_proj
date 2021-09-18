@@ -31,7 +31,6 @@ class DentaBot extends ActivityHandler {
             // send user input to IntentRecognizer and collect the response in a variable
             const LuisResult = await this.intentRecognizer.executeLuisQuery(context);
             // don't forget 'await'
-                     
             // determine which service to respond with based on the results from LUIS //
 
             // if(top intent is intentA and confidence greater than 50){
@@ -76,7 +75,7 @@ class DentaBot extends ActivityHandler {
         this.onMembersAdded(async (context, next) => {
         const membersAdded = context.activity.membersAdded;
         //write a custom greeting
-        const welcomeText = 'Hello and welcome to ContosoDentristyWebsite. I can help you find available slots and book you dental appointments. You can say "find appointment" or "schedule appointment" to schedule your dental appointment.';
+        const welcomeText = 'Hello and welcome to Contoso Dentristy Website. I can help you find available slots and book you dental appointments. You can say "find appointment" or "schedule appointment" to schedule your dental appointment.';
         for (let cnt = 0; cnt < membersAdded.length; ++cnt) {
             if (membersAdded[cnt].id !== context.activity.recipient.id) {
                 await context.sendActivity(MessageFactory.text(welcomeText, welcomeText));
