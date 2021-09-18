@@ -41,7 +41,7 @@ class DentaBot extends ActivityHandler {
             // }
             // else {...}
             if (LuisResult.luisResult.prediction.topIntent === "ScheduleAppointment" &&
-                LuisResult.intents.ScheduleAppointment.score > .5
+                LuisResult.intents.ScheduleAppointment.score > .7
             ){
                 const time = LuisResult.entities.$instance.date_time[0].text;
                 // call api with location entity info
@@ -51,7 +51,7 @@ class DentaBot extends ActivityHandler {
                 return;
             }
             if (LuisResult.luisResult.prediction.topIntent === "GetAvailability" &&
-                LuisResult.intents.GetAvailability.score > .5
+                LuisResult.intents.GetAvailability.score > .7
             ){
                 //const date_time = LuisResult.entities.$instance.date_time[0].text;
                 // call api with location entity info
