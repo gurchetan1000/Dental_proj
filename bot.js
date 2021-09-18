@@ -46,8 +46,7 @@ class DentaBot extends ActivityHandler {
             ){
                 const time = LuisResult.entities.$instance.date_time[0].text;
                 // call api with location entity info
-                const schedule_output = this.dentistScheduler.scheduleAppointment(time);
-                console.log(schedule_output)
+                const schedule_output = await this.dentistScheduler.scheduleAppointment(time);
                 await context.sendActivity(schedule_output);
                 await next();
                 return;
@@ -57,8 +56,7 @@ class DentaBot extends ActivityHandler {
             ){
                 //const date_time = LuisResult.entities.$instance.date_time[0].text;
                 // call api with location entity info
-                const avail_output = this.dentistScheduler.getAvailability();
-                console.log(avail_output)
+                const avail_output = await this.dentistScheduler.getAvailability("");
                 await context.sendActivity(avail_output);
                 await next();
                 return;
